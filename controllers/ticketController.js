@@ -37,7 +37,7 @@ module.exports = {
 
     try {
       const { rows } = await client.query(
-        "SELECT tickets.id, tickets.title, tickets.description, users.id AS user_id , users.first_name, users.last_name FROM tickets JOIN users ON tickets.author_id = users.id WHERE project_id = $1",
+        "SELECT tickets.id, tickets.title, tickets.description, users.user_id AS user_id , users.first_name, users.last_name FROM tickets JOIN users ON tickets.author_id = users.user_id WHERE project_id = $1",
         [projectId]
       );
 
@@ -120,7 +120,7 @@ module.exports = {
 
     try {
       const { rows } = await client.query(
-        "SELECT tickets.id, tickets.title, tickets.description, tickets.priority, tickets.status, tickets.type, tickets.time_estimate, users.first_name, users.last_name FROM tickets JOIN users ON tickets.author_id = users.id WHERE tickets.id = $1",
+        "SELECT tickets.id, tickets.title, tickets.description, tickets.priority, tickets.status, tickets.type, tickets.time_estimate, users.first_name, users.last_name FROM tickets JOIN users ON tickets.author_id = users.user_id WHERE tickets.id = $1",
         [ticketId]
       );
 

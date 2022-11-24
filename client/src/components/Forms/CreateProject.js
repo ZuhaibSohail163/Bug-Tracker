@@ -125,7 +125,7 @@ const CreateProject = (props) => {
               >
                 {availableTeamMembers.map((user, key) => {
                   return (
-                    <option key={key} value={user.id}>
+                    <option key={key} value={user.user_id}>
                       {user.first_name} {user.last_name}
                     </option>
                   );

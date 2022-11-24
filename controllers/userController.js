@@ -8,7 +8,7 @@ module.exports = {
 
     try {
       const { rows } = await client.query(
-        "SELECT id, first_name, last_name, phone, email, user_authority FROM users"
+        "SELECT user_id, first_name, last_name, phone, email, user_authority FROM users"
       );
 
       res.json(rows);
@@ -81,11 +81,16 @@ module.exports = {
     const { email } = req.body;
     console.log(`Looking for existing email: ${email}`);
 
-    const client = await pool.connect();
+    let client = null;
+    try {
+      client = await pool.connect();
+    } catch (error) {
+      console.log('Error Found !')
+      console.log(error);
+    }
 
     try {
       console.log("connected to postgres Pool");
-
       const { rows } = await client.query(
         "SELECT id FROM users WHERE email = $1",
         [email]

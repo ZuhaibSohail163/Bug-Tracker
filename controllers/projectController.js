@@ -56,7 +56,7 @@ module.exports = {
     }
   },
   deleteProject: async (req, res) => {
-    const projectId = req.params.id;
+    const projectId = parseInt(req.params.id);
 
     console.log(projectId);
     const client = await pool.connect();
@@ -76,10 +76,10 @@ module.exports = {
           "DELETE FROM ticket_history WHERE ticket_id IN (SELECT id FROM tickets WHERE project_id = $1)",
           [projectId]
         ),
-        await client.query(
-          "DELETE FROM comments WHERE ticket_id IN (SELECT id FROM tickets WHERE project_id = $1)",
-          [projectId]
-        ),
+        // await client.query(
+        //   "DELETE FROM comments WHERE ticket_id IN (SELECT id FROM tickets WHERE project_id = $1)",
+        //   [projectId]
+        // ),
       ]);
 
       //delete tickets, user_projects from projects

@@ -10,7 +10,7 @@ module.exports = {
       const {
         rows,
       } = await client.query(
-        "SELECT id, email, first_name, last_name FROM users as U WHERE NOT EXISTS (SELECT user_id FROM user_projects as UP WHERE UP.user_id = U.id AND UP.project_id = $1)",
+        "SELECT user_id, email, first_name, last_name FROM users as U WHERE NOT EXISTS (SELECT user_id FROM user_projects as UP WHERE UP.user_id = U.user_id AND UP.project_id = $1)",
         [projectId]
       );
 

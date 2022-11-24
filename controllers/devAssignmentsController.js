@@ -50,7 +50,7 @@ module.exports = {
       const {
         rows,
       } = await client.query(
-        "SELECT user_id, first_name, last_name, phone, email FROM users JOIN dev_assignments ON (dev_assignments.user_id = users.id) WHERE ticket_id = $1",
+        "SELECT user_id, first_name, last_name, phone, email FROM users JOIN dev_assignments ON (dev_assignments.user_id = users.user_id) WHERE ticket_id = $1",
         [ticketId]
       );
 
