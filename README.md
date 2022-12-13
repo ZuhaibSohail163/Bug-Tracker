@@ -2,7 +2,7 @@ The doc file is a guide on testing and test automation in web 3.0
 The zip file contains an example code of a smart contract of pet shop with testing files in it.
 The testing is done using truffle and the smart contract was written in solidity.
 
-**# To Compile the Code**
+**# To Compile the Code #**
 
 **## Step 1**  
 install Nodejs and Git
