@@ -4,13 +4,13 @@ The testing is done using truffle and the smart contract was written in solidity
 
 #To Compile the Code
 
-#Step 1
+#Step 1  
 install Nodejs and Git
 
-#step 2: Run the following command
+#step 2: Run the following command  
 npm install -g truffle
 
-#Step 3: Install Gabache from the link bellow
+#Step 3: Install Gabache from the link bellow  
 https://trufflesuite.com/ganache/
 
 #Step 4: Create Truffle Project by writing,
