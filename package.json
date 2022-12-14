@@ -107,7 +107,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "plugin:prettier/recommended"
+      "plugin:prettier/recommended",
+      "plugin:security/recommended"
     ]
   },
   "prettier": {
